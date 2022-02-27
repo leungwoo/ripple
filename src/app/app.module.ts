@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AboutUsComponent } from './about-us/about-us.component';
+
 import { AboutYouComponent } from './about-you/about-you.component';
 import { FaqComponent } from './faq/faq.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,12 +15,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AboutUsComponent,
     AboutYouComponent,
     FaqComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
