@@ -1,0 +1,171 @@
+<h1>This is a Reactive Form example</h1>
+
+<h3>Fill all fields below:</h3>
+
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit(customerForm)">
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input
+        placeholder="Peter"
+        type="text"
+        matInput
+        formControlName="firstName"
+      />
+      <mat-hint>please enter first name</mat-hint>
+      <mat-icon matSuffix>person</mat-icon>
+      <mat-error
+        *ngIf="
+          customerForm.get('firstName')?.invalid &&
+          customerForm.get('firstName')?.touched
+        "
+      >
+        <div *ngIf="customerForm.get('firstName')?.hasError('minlength')">
+          First name length minimum 3 characters
+        </div>
+        <div *ngIf="customerForm.get('lastName')?.hasError('required')">
+          Required
+        </div>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <br />
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input
+        placeholder="Ragnoorok"
+        type="text"
+        matInput
+        formControlName="lastName"
+      />
+      <mat-hint>please enter last name</mat-hint>
+      <mat-icon matSuffix>person</mat-icon>
+      <mat-error
+        *ngIf="
+          customerForm.get('lastName')?.invalid &&
+          customerForm.get('lastName')?.touched
+        "
+      >
+        <div *ngIf="customerForm.get('lastName')?.hasError('minlength')">
+          Last name length minimum 3 characters
+        </div>
+        <div *ngIf="customerForm.get('lastName')?.hasError('required')">
+          Required
+        </div>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <br />
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>email</mat-label>
+      <input
+        placeholder="email"
+        type="email"
+        matInput
+        formControlName="email"
+      />
+      <mat-hint>please enter email</mat-hint>
+      <mat-icon matSuffix>email</mat-icon>
+      <mat-error
+        *ngIf="
+          customerForm.get('email')?.invalid &&
+          customerForm.get('email')?.touched
+        "
+      >
+        <div *ngIf="customerForm.get('email')?.hasError('required')">
+          Required
+        </div>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <br />
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>password</mat-label>
+      <input
+        [attr.type]="show ? 'text' : 'password'"
+        matInput
+        formControlName="password"
+      />
+      <mat-hint>please enter a password</mat-hint>
+      <mat-icon (click)="show = !show" matSuffix>{{
+        show ? "visibility" : "visibility_off"
+      }}</mat-icon>
+
+      <mat-error
+        *ngIf="
+          customerForm.get('password')?.invalid &&
+          customerForm.get('password')?.touched
+        "
+      >
+        <div *ngIf="customerForm.get('password')?.hasError('required')">
+          Required
+        </div>
+        <div *ngIf="customerForm.get('password')?.hasError('minlength')">
+          minimum length 5 characters
+        </div>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <br />
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Date of Birth</mat-label>
+      <input type="date" matInput formControlName="dateOfBirth" />
+      <mat-hint>please enter date of birth</mat-hint>
+      <mat-icon matSuffix>date</mat-icon>
+
+      <mat-error
+        *ngIf="
+          customerForm.get('dateOfBirth')?.invalid &&
+          customerForm.get('dateOfBirth')?.touched
+        "
+      >
+        <div *ngIf="customerForm.get('dateOfBirth')?.hasError('required')">
+          Required
+        </div>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <br />
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Occupation</mat-label>
+      <input
+        placeholder="Occupation"
+        type="text"
+        matInput
+        formControlName="occupation"
+      />
+      <mat-hint>please enter Occupation</mat-hint>
+      <mat-icon matSuffix>person</mat-icon>
+      <mat-error
+        *ngIf="
+          customerForm.get('occupation')?.invalid &&
+          customerForm.get('occupation')?.touched
+        "
+      >
+        <div *ngIf="customerForm.get('occupation')?.hasError('required')">
+          Required
+        </div>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <br />
+  <div>
+    <button
+      type="submit"
+      class="btn btn-success"
+      type="submit"
+      mat-raised-button
+      [disabled]="customerForm.invalid"
+      color="primary"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+
+Value: {{ customerForm.value | json }}
