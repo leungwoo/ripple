@@ -8,8 +8,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { AboutYouComponent } from './about-you/about-you.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { OurstoryComponent } from './components/ourstory/ourstory.component';
+import { CareersComponent } from './components/careers/careers.component';
+import { BlogsComponent } from './components/blogs/blogs.component';
+import { EventsComponent } from './components/events/events.component';
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent],
+  declarations: [AppComponent, AboutYouComponent, PageNotFoundComponent, OurstoryComponent, CareersComponent, BlogsComponent, EventsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -18,6 +25,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatMenuModule,
     MatButtonModule,
     MatIconModule,
+    MatFormFieldModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

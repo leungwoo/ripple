@@ -1,1 +1,15 @@
-<p>about-us works!</p>
+<h3>About Us</h3>
+
+<!-- <nav>
+  <ul>
+    <li><a routerLink="ourstory">Our Story</a></li>
+    <li><a routerLink="careers">Careers</a></li>
+  </ul>
+  <router-outlet></router-outlet>
+</nav> -->
+<nav mat-tab-nav-bar>
+  <a mat-tab-link [routerLink]="'ourstory'">Our Story</a>
+  <a mat-tab-link [routerLink]="'careers'">Careers</a>
+</nav>
+
+<router-outlet></router-outlet>
