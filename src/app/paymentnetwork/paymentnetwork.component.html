@@ -1,4 +1,4 @@
-<h1>This is a Reactive Form example</h1>
+<!-- <h1>This is a Reactive Form example</h1>
 
 <h3>Fill all fields below:</h3>
 
@@ -169,4 +169,11 @@
 </form>
 <a routerLink="/resources">Back to home page</a>
 <br />
-Value: {{ customerForm.value | json }}
+Value: {{ customerForm.value | json }} -->
+<h1>Payments Network</h1>
+
+<nav mat-tab-nav-bar>
+  <a mat-tab-link [routerLink]="'ripplenet'">Ripplenet</a>
+  <a mat-tab-link [routerLink]="'lineofcredit'">Line of Credit</a>
+</nav>
+<router-outlet></router-outlet>

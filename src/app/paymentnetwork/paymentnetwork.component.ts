@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-faq',
-  templateUrl: './faq.component.html',
-  styleUrls: ['./faq.component.scss'],
+  selector: 'app-paymentnetwork',
+  templateUrl: './paymentnetwork.component.html',
+  styleUrls: ['./paymentnetwork.component.scss'],
 })
-export class FaqComponent {
+export class PaymentNetworkComponent {
   public show: boolean = false;
   public customerForm: FormGroup = new FormGroup({
     firstName: new FormControl('', [
